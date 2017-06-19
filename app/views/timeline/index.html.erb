@@ -1,0 +1,13 @@
+<%= form_for @tweet, url: { action: 'create', controller: 'tweets' } do |form| %>
+  <%= form.label :post %>
+  <%= form.text_area :post %>
+  <%= form.submit 'Tweet!' %>
+<% end %>
+
+<% @tweets.each do |tweet| %>
+  <%= tweet.user.email %>
+  <%= tweet.post %>
+  <%= tweet.created_at %>
+  <br />
+  <br />
+<% end %>
